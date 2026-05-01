@@ -58,7 +58,7 @@ def crawl_content_and_next_link(url):
 # --- CẤU HÌNH GIAO DIỆN ---
 st.set_page_config(page_title="Dịch Truyện Online", page_icon="📖", layout="wide")
 
-st.title("📖 Đọc Truyện & Dịch Tự Động")
+st.title("📖 Web đọc truyện của bé Giangg")
 
 if not api_key:
     st.error("❌ Không tìm thấy GOOGLE_API_KEY trong Secrets!")
@@ -88,7 +88,7 @@ with col1:
 with col2:
     st.button("❌", on_click=clear_url, use_container_width=True)
 with col3:
-    start_button = st.button("🚀 Bắt đầu dịch", use_container_width=True)
+    start_button = st.button("🚀 Bé iu đọc truyện duiii", use_container_width=True)
 
 st.divider()
 
@@ -107,7 +107,7 @@ if start_button or (st.session_state.url_input and st.session_state.url_input ==
         else:
             try:
                 client = genai.Client(api_key=api_key)
-                with st.spinner('🤖 AI đang dịch chương mới...'):
+                with st.spinner('🤖 AI đang dịch chương mới bé iu chờ chíu nho...'):
                     prompt = "Dịch nội dung sau sang tiếng Việt mượt mà, giữ cấu trúc đoạn văn, chỉ trả về bản dịch:\n\n"
                     response = client.models.generate_content(
                         model='gemini-flash-latest',
@@ -116,7 +116,7 @@ if start_button or (st.session_state.url_input and st.session_state.url_input ==
                     translated_text = response.text
                     display_text = re.sub(r'\n+', '\n\n', translated_text)
 
-                    st.success("✅ Dịch hoàn tất!")
+                    st.success("✅ Dịch hoàn tất! Chúc embe đọc truyện duii")
 
                     # Cột hiển thị Bản dịch và Nút chuyển chương
                     title_col, next_btn_col = st.columns([8, 2])
@@ -124,7 +124,7 @@ if start_button or (st.session_state.url_input and st.session_state.url_input ==
                         st.subheader("Bản Dịch")
                     with next_btn_col:
                         if st.session_state.next_url:
-                            st.button("⏭️ Chương Tiếp Theo", on_click=go_to_next_chapter, type="primary",
+                            st.button("⏭️ Chương Tiếp Theo Nò Bé", on_click=go_to_next_chapter, type="primary",
                                       use_container_width=True)
 
                     with st.container(height=600, border=True):
