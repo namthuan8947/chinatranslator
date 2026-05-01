@@ -110,7 +110,7 @@ if start_button or (st.session_state.url_input and st.session_state.url_input ==
                 with st.spinner('🤖 AI đang dịch chương mới bé iu chờ chíu nho...'):
                     prompt = "Dịch nội dung sau sang tiếng Việt mượt mà, giữ cấu trúc đoạn văn, chỉ trả về bản dịch:\n\n"
                     response = client.models.generate_content(
-                        model='gemini-2.5-flash',
+                        model='gemini-3.1-flash-lite-preview',
                         contents=prompt + crawled_text
                     )
                     translated_text = response.text
