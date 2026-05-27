@@ -53,7 +53,7 @@ def crawl_content_and_next_link(url):
 # --- HÀM DỊCH AI ---
 def translate_text(text):
     client = genai.Client(api_key=api_key)
-    model_name = 'gemini-3.1-flash-lite-preview'
+    model_name = 'gemini-flash-lite-latest'
     prompt = "Dịch nội dung sau sang tiếng Việt mượt mà, văn phong truyện chuyên nghiệp, giữ cấu trúc đoạn văn, chỉ trả về bản dịch:\n\n"
 
     max_retries = 10
